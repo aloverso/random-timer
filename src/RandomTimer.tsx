@@ -70,7 +70,7 @@ export const RandomTimer = (): ReactElement => {
 
       <div className="row ptxl">
         <div className="col-xs-12 fdr fjc">
-          <h2 className="text-xxl">start a random timer</h2>
+          <h2 className="text-xxl align-center">start a random timer</h2>
         </div>
       </div>
       <div className="row ptl">

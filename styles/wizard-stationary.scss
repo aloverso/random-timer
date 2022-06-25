@@ -1,0 +1,583 @@
+$primary: #935953;
+//$primary: #3f64ce;
+$skin: #f1c5b4;
+$background: #ffffff;
+
+
+/** Wizard CSS & Animations */
+.scene-s {
+  display: flex;
+  justify-content: center;
+}
+
+.wizard-s {
+  position: relative;
+  width: 190px;
+  height: 240px;
+}
+
+.body-s {
+  position: absolute;
+  bottom: 0;
+  left: 68px;
+  height: 100px;
+  width: 60px;
+  background: $primary;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    height: 100px;
+    width: 60px;
+    background: $primary;
+    transform: skewX(14deg);
+  }
+}
+
+.right-arm-s {
+  position: absolute;
+  bottom: 74px;
+  left: 110px;
+  height: 44px;
+  width: 90px;
+  background: $primary;
+  border-radius: 22px;
+  /** animation */
+  transform-origin: 16px 22px;
+  transform: rotate(28deg);
+  animation: right_arm 4s ease-in-out infinite;
+  .right-hand-s {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: $skin;
+    /** animation */
+    transform-origin: center center;
+    transform: rotate(10deg);
+    animation: right_hand 4s ease-in-out infinite;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0px;
+      top: -8px;
+      width: 15px;
+      height: 30px;
+      border-radius: 10px;
+      background: $skin;
+      /** Animation */
+      transform: translateY(16px);
+      animation: right_finger 4s ease-in-out infinite;
+    }
+  }
+}
+
+.left-arm-s {
+  position: absolute;
+  bottom: 74px;
+  left: 26px;
+  height: 44px;
+  width: 70px;
+  background: $primary;
+  border-bottom-left-radius: 8px;
+  /** animation */
+  transform-origin: 60px 26px;
+  transform: rotate(0deg);
+  animation: left_arm 4s ease-in-out infinite;
+  .left-hand-s {
+    position: absolute;
+    left: -18px;
+    top: 0;
+    width: 18px;
+    height: 30px;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    background: $skin;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 30px;
+      height: 15px;
+      border-radius: 20px;
+      background: $skin;
+      /** Animation */
+      transform-origin: right bottom;
+      transform: scaleX(1) rotate(7deg);
+      animation: left_finger 4s ease-in-out infinite;
+    }
+  }
+}
+
+.head-s {
+  position: absolute;
+  top: 0;
+  left: 14px;
+  width: 160px;
+  height: 210px;
+  /** Animation */
+  transform-origin: center center;
+  transform: rotate(-3deg);
+  animation: head 4s ease-in-out infinite;
+  .beard-s {
+    position: absolute;
+    bottom: 0;
+    left: 38px;
+    height: 106px;
+    width: 80px;
+    border-bottom-right-radius: 55%;
+    background: $background;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: -10px;
+      width: 40px;
+      height: 20px;
+      border-radius: 20px;
+      background: $background;
+    }
+  }
+
+  .face-s {
+    position: absolute;
+    bottom: 76px;
+    left: 38px;
+    height: 30px;
+    width: 60px;
+    background: $skin;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 40px;
+      width: 20px;
+      height: 40px;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      background: $skin;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 16px;
+      left: -10px;
+      width: 50px;
+      height: 20px;
+      border-radius: 20px;
+      border-bottom-right-radius: 0px;
+      background: $background;
+    }
+
+    .adds-s {
+      /** Nose */
+      position: absolute;
+      top: 0px;
+      left: -10px;
+      width: 40px;
+      height: 20px;
+      border-radius: 20px;
+      background: $skin;
+
+      &::after {
+        /** Ear */
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 80px;
+        width: 15px;
+        height: 20px;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+        background: $skin;
+      }
+    }
+  }
+
+  .hat-s {
+    position: absolute;
+    bottom: 106px;
+    left: 0;
+    width: 160px;
+    height: 20px;
+    border-radius: 20px;
+    background: $primary;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -70px;
+      left: 50%;
+      transform: translatex(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 34px 70px 50px;
+      border-color: transparent transparent $primary transparent;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 160px;
+      height: 20px;
+      background: $primary;
+      border-radius: 20px;
+    }
+
+    .hat-of-the-hat-s {
+      position: absolute;
+      bottom: 78px;
+      left: 79px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 25px 25px 19px;
+      border-color: transparent transparent $primary transparent;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: -4px;
+        width: 35px;
+        height: 10px;
+        border-radius: 10px;
+        border-bottom-left-radius: 0px;
+        background: $primary;
+        transform: rotate(40deg);
+      }
+    }
+
+    .four-point-star-s {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        background: $background;
+        display: block;
+        left: 0;
+        width: 141.4213%; /* 100% * √2 */
+        top: 0;
+        bottom: 0;
+        border-radius: 10%;
+        transform: rotate(66.66deg) skewX(45deg);
+      }
+
+      &::after {
+        transform: rotate(156.66deg) skew(45deg);
+      }
+
+      &.--first {
+        bottom: 28px;
+        left: 46px;
+      }
+
+      &.--second {
+        bottom: 40px;
+        left: 80px;
+      }
+
+      &.--third {
+        bottom: 15px;
+        left: 108px;
+      }
+    }
+  }
+}
+
+/** 10s animation - 10% = 1s */
+
+@keyframes right_arm {
+  10% {
+    transform: rotate(8deg);
+  }
+  20% {
+    transform: rotate(20deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(26deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(28deg);
+  }
+  70% {
+    transform: rotate(9deg);
+  }
+  80% {
+    transform: rotate(28deg);
+  }
+  90% {
+    transform: rotate(8deg);
+  }
+  98% {
+  transform: rotate(28deg);
+}
+}
+
+@keyframes left_arm {
+  10% {
+    transform: rotate(6deg);
+  }
+  20% {
+    transform: rotate(-18deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  40% {
+    transform: rotate(-18deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-17deg);
+  }
+  70% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-18deg);
+  }
+  90% {
+    transform: rotate(5deg);
+  }
+  98% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes right_hand {
+  10% {
+    transform: rotate(-5deg);
+  }
+  20% {
+    transform: rotate(-60deg);
+  }
+  30% {
+    transform: rotate(-0deg);
+  }
+  40% {
+    transform: rotate(-60deg);
+  }
+  50% {
+    transform: rotate(-0deg);
+  }
+  60% {
+    transform: rotate(-40deg);
+  }
+  70% {
+    transform: rotate(-60deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  90% {
+    transform: rotate(-60deg);
+  }
+  98% {
+    transform: rotate(10deg);
+  }
+}
+
+
+@keyframes left_finger {
+  10% {
+    transform: scaleX(1) rotate(6deg);
+  }
+  20% {
+    transform: scaleX(1) rotate(0deg);
+  }
+  30% {
+    transform: scaleX(1) rotate(8deg);
+  }
+  40% {
+    transform: scaleX(1) rotate(0deg);
+  }
+  50% {
+    transform: scaleX(1) rotate(7deg);
+  }
+  60% {
+    transform: scaleX(1) rotate(0deg);
+  }
+  70% {
+    transform: scaleX(1) rotate(5deg);
+  }
+  80% {
+    transform: scaleX(1) rotate(0deg);
+  }
+  90% {
+    transform: scaleX(1) rotate(6deg);
+  }
+}
+
+@keyframes head {
+  10% {
+    transform: translatex(10px) rotate(7deg);
+  }
+  20% {
+    transform: translatex(0px) rotate(0deg);
+  }
+  30% {
+    transform: translatex(10px) rotate(7deg);
+  }
+  40% {
+    transform: translatex(0px) rotate(0deg);
+  }
+  50% {
+    transform: translatex(10px) rotate(7deg);
+  }
+  60% {
+    transform: translatex(0px) rotate(0deg);
+  }
+  70% {
+    transform: translatex(10px) rotate(7deg);
+  }
+  80% {
+    transform: translatex(0px) rotate(0deg);
+  }
+  90% {
+    transform: translatex(10px) rotate(7deg);
+  }
+  98% {
+    transform: translatex(0px) rotate(0deg);
+  }
+}
+
+/** Objects CSS & Animations */
+
+.objects-s {
+  position: relative;
+  width: 200px;
+  height: 240px;
+}
+
+.square-s {
+  position: absolute;
+  bottom: -60px;
+  left: -5px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  /** Animation */
+  transform: translateY(-140px) rotate(-360deg);
+  animation: path_square 1s ease-in-out infinite;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: #9ab3f5;
+  }
+}
+
+.circle-s {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /** Animation */
+  transform: translateY(-100px) rotate(-360deg);
+  animation: path_circle 1s ease-in-out infinite;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #c56183;
+  }
+}
+
+.triangle-s {
+  position: absolute;
+  bottom: -62px;
+  left: -10px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  /** Animation */
+  transform: translateY(-120px) rotate(-360deg);
+  animation: path_triangle 1s ease-in-out infinite;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 28px 48px 28px;
+    border-color: transparent transparent #89beb3 transparent;
+  }
+}
+
+/** 10s animation - 10% = 1s */
+
+@keyframes path_circle {
+  25% {
+    transform: translateY(-90px) rotate(-360deg);
+  }
+  55% {
+    transform: translateY(-120px) translatex(15px) rotate(-360deg);
+  }
+  85% {
+    transform: translateY(-90px) translatex(-10px)  rotate(-360deg);
+  }
+}
+
+@keyframes path_square {
+  17% {
+    transform: translateY(-125px) translatex(-15px) rotate(-350deg);
+  }
+  65% {
+    transform: translateY(-155px) translatex(-15px) rotate(-350deg);
+  }
+}
+
+@keyframes path_triangle {
+  55% {
+    transform: translateY(-172px) translatex(10px) rotate(-365deg);
+  }
+}
+
+.text-animate {
+  font-size: 30px;
+  color: #9ab3f5;
+  transform: scale(1);
+  animation: path_text 1s ease-in-out infinite;
+}
+
+@keyframes path_text {
+  50% {
+    transform: scale(1.3);
+  }
+}
